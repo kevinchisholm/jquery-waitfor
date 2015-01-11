@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link href="stylesheets/demo.css" type="text/css" rel="stylesheet" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Jquery-waitfor by kevinchisholm</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <img src="images/jquery-wait-for-logo.png" class="jquery-wait-for-logo">
+        <h1>Jquery-waitfor</h1>
+        <h2>A jQuery plugin that polls for one or more asynchronous DOM elements</h2>
+        <a href="https://github.com/kevinchisholm/jquery-waitfor" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <div class="homeDemoLink"><a href="index.html">Home</a></div>
+          <div class="instructions">
+            <p>Click any of the green boxes below. In each case, a larger colored box will be injected into the DOM. Once all three colored boxes exist in the DOM, a success message will display.</p>
+          </div>
+          <div class="demo">
+            <div class="removeAll" title="Remove any existing boxes and start over">Re-start the demo</div>
+            <div class="demoBoxes">
+              <div class="demoBoxContainer" data-cssClass="one">
+                <div class="controls">
+                  <p class="show" title="Show box # 1">Show box # 1</p>
+                </div>
+              </div>
+              <div class="demoBoxContainer" data-cssClass="two">
+                <div class="controls">
+                  <p class="show" title="Show box # 2">Show box # 2</p>
+                </div>
+              </div>
+                <div class="demoBoxContainer" data-cssClass="three">
+                <div class="controls">
+                  <p class="show" title="Show box # 3">Show box # 3</p>
+                </div>
+              </div>
+            </div>
+            <div class="progressMessage"><ul></ul></div>
+            <div class="successMessage">
+              All three boxes are now in the DOM!
+            </div>
+            <div class="failureMessage">
+              Polling for all three boxes failed!
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+    <script src="javascripts/jquery.waitFor.js"></script>
+    <script src="javascripts/demo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+body {font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;font-weight: 300;}
+
+article{width:80%;margin: 10px auto;border:1px solid #ccc;border-radius:5px;}
+h1,h2,h3{font-weight:bold;color:#fff;margin-left:10px;}
+h1{margin-bottom:10px;font-size:32px;}
+h2{font-size:28px;}
+h2 a{color:#fff;}
+h3{margin-top:10px;font-size:24px;}
+
+header{width:90%;margin:20px auto;padding:10px;overflow:auto;background-color:#0769ad;}
+
+header img.jquery-logo{display:block;float:left;width:243px;margin-right:20px;}
+
+#content{width:90%;margin:20px auto;clear:left;}
+
+.instructions{margin: 20px 0;padding:20px;background-color:#ededed;border:4px solid #ccc;border-radius:5px;color:#333;font-size:24px;line-height:28px;}
+
+.instructions a{font-weight:bold;color:#008080;}
+
+.drop-elements{margin: 0 0 20px;padding:20px 0;border-top: 1px solid #ccc;border-bottom:1px solid #ccc;overflow: auto;text-align: center;}
+
+.dropElement{display:inline-block;width:20%;margin-right:3%;height:150px;padding:1%;background-color:#FFC551;vertical-align: top;}
+
+.dropElement:last-child{margin-right:0;}
+
+.drag-elements{height:120px;padding-top:10px;overflow:auto;background-color:#FFC551;text-align: center;}
+
+.dropElement,.drag-elements,.dragElement{border-radius:5px;}
+
+.dragElement{display:inline-block;margin: 0 auto;width: 100px;height:100px;background-color:#0F368F;color:#fff;font-weight:bold;text-align: center;line-height: 100px;border: 4px solid;border-radius:5px;}
+
+.drag-elements .dragElement{margin-right:10px;}
+
+.drag-elements .dragElement:last-child{margin-right:0;}
+
+.dragElement:hover{cursor: pointer;}
+
+.dragEnter{background-color:#33A0A0;}
+.hasChild{background-color:#D56100;}
+
+.redBorder{border-color: #DC143C;}
+.greenBorder{border-color: #ADFF2F;}
+.orangeBorder{border-color: #FFA500;}
+.pinkBorder{border-color: #FF1493;}
+
+.copyright{margin:20px 0;text-align:center;}
+
+.copyright, .copyright a{font-weight:bold;color:#0769ad;}
+
+
+/*  demo boxes */
+
+.demoBoxes,.successMessage,.failureMessage{margin: 20px 0;padding:20px;background-color:#ededed;border:4px solid #ccc;border-radius:5px;color:#333;font-size:24px;line-height:28px;overflow:auto;}
+
+.demoBoxContainer{
+	float:left;
+	width:30%;
+	margin-right:5%;
+}
+.demoBoxContainer:last-child{
+	margin-right:0;
+}
+
+.removeAll, .demoBoxContainer .controls .show{
+	padding: 10px;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;
+}
+
+
+.removeAll{
+	display:none;
+	background-color:#333;
+}
+
+.demoBoxContainer .controls .show{
+	background-color:#3c9000;
+}
+
+.demoBoxContainer .controls .hide:hover, .demoBoxContainer .controls .show:hover,.removeAll:hover{
+	cursor:pointer;
+}
+
+.demoBox{
+	display: none;
+	height:150px;
+	height: 150px;
+	line-height: 150px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 50px;
+	text-transform: capitalize;
+	color: #fff;
+}
+
+.demoBox.one{background-color: #9b02b0;}
+.demoBox.two{background-color: #ffbe00;}
+.demoBox.three{background-color: #00a4a4;}
+
+
+.progressMessage,.successMessage{color:#0769ad;font-weight:bold;}
+
+.progressMessage{
+	height: 300px;
+	line-height: 50px;
+	background-color: #fff;
+	text-align:left;
+	overflow:scroll;
+}
+
+.progressMessage p{width:100%;}
+.progressMessage span{margin-left:1%;}
+.progressMessage .key,.progressMessage .val{display: inline-block;padding:1%;color:#fff;width:22%;margin-bottom:5px;}
+.progressMessage .key{background-color: #0769ad;}
+.progressMessage .val{background-color: #ff9000;}
+
+
+.progressMessage li:nth-child(odd) .val{
+   background-color: #444;
+}
+
+.successMessage,.failureMessage{display:none;text-align:center;color:#fff;}
+
+.successMessage{background-color: #128600;}
+
+.failureMessage{background-color: #ea003f;}
+
+.successMessage, .copyright{clear:left;}
+
+@media screen and (max-width : 1000px) {
+  header img.jquery-logo{display:none;}
+}
+
+@media screen and (max-width : 600px) {
+	h1{font-size:22px;}
+	h2{font-size:18px;}
+
+	.demoBoxContainer .controls .show {
+	    font-size:18px;
+	}
+
+	.progressMessage .key, .progressMessage .val {
+		font-size:18px;
+	}
+
+	.progressMessage .key, .progressMessage .val {
+	    padding: 1%;
+	    width: 46%;
+	}
+
+	.key.selector, .key.counter{display:none;}
+}
+
+@media screen and (max-width : 500px) {
+	h1{font-size:14px;}
+	h2{display:none;}
+
+	.instructions{
+		padding: 10px;
+	    font-size: 16px;
+	    line-height: 22px;
+	}
+
+	.demoBoxes, .successMessage, .failureMessage{padding: 10px;}
+
+	.demoBox{font-size:18px;}
+}
+
+@media screen and (max-width : 400px) {
+  .demoBoxContainer .controls .show{font-size: 14px;}
+}
+
+
+/* github page theme override */
+
+
+#content-wrapper{
+	padding-top: 10px;
+}
+
+
+#main-content {
+    float: none;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.jquery-wait-for-logo{
+	display:block;
+	float:left;
+	width:150px;
+	margin-right: 20px;
+}
+
+header {margin-bottom:0;}
+
+header h1 {font-size: 32px;}
+
+header h2 {font-size: 16px;width:auto;}

@@ -29,6 +29,7 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
+          <div class="homeDemoLink"><a href="demo.html" title="View the jQuery.waitFor demo">Demo</a></div>
           <h3>
 <a id="reliably-wait-for-one-or-more-async-dom-elements" class="anchor" href="#reliably-wait-for-one-or-more-async-dom-elements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reliably wait for one or more async DOM elements.</h3>
 
@@ -37,7 +38,9 @@
 <h3>
 <a id="including-jquery-waitfor-in-your-page" class="anchor" href="#including-jquery-waitfor-in-your-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Including jQuery.waitFor in your page</h3>
 
-<pre><code>&lt;script src="PATH_TO/jquery.waitFor.js"&gt;&lt;/script&gt;
+<pre><code>
+  &lt;script src="PATH_TO/jquery.js"&gt;&lt;/script&gt;
+  &lt;script src="PATH_TO/jquery.waitFor.js"&gt;&lt;/script&gt;
 </code></pre>
 
 
@@ -109,6 +112,20 @@ jQuery.waitFor({
   failure: function(){
     alert('Non of the elements I was wating for were found in the DOM!');
   }
+});
+</code></pre>
+
+<h3>
+<a id="provide-a-progress-callback" class="anchor" href="#provide-a-progress-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provide a progress callback</h3>
+
+<p>On each iteration, jQuery.waitFor will call the progress callback if one is provided. That function will receive two arguments; the CSS selector that it is searching for, and an integer representing the iteration index.</p>
+
+<pre><code>
+jQuery.waitFor({
+  elements: ['#someElementId'],
+    progress: function(selector,counter){
+      console.log('Trying to find: ' + selector + ', Iteration #: ' + counter);
+    },
 });
 </code></pre>
 
