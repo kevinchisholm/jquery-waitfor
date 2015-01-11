@@ -35,6 +35,13 @@
 <p>jQuery.waitFor is actually a static method that is added to the jQuery prototype object (jQuery.fn). It will poll for one or more asynchronous DOM elements. You can specify a callback that executes when all the async DOM elements are found, or a failure callback that executes when polling fails.</p>
 
 <h3>
+<a id="including-jquery-waitfor-in-your-page" class="anchor" href="#including-jquery-waitfor-in-your-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Including jQuery.waitFor in your page</h3>
+
+<pre><code>&lt;script src="PATH_TO/jquery.waitFor.js"&gt;&lt;/script&gt;
+</code></pre>
+
+
+<h3>
 <a id="waiting-for-one-element" class="anchor" href="#waiting-for-one-element" aria-hidden="true"><span class="octicon octicon-link"></span></a>Waiting for one element</h3>
 
 <p>Pass a string containing the CSS selector of the element that you want to wait for. jQuery.waitFor will always return a jQuery deferred, so you simply chain a call to the .done() method, and pass that method a named or anonymous function.</p>
@@ -53,6 +60,58 @@
   alert('All of the elements that I was wating for are in the DOM!');
 });
 </code></pre>
+
+
+<h3>
+<a id="pass-in-an-options-object" class="anchor" href="#pass-in-an-options-object" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pass-in an options object</h3>
+
+<p>Pass an object instead of a string or array. The "elements" property should be an array of one or more CSS selector strings. The "success" method will be executed once all of the specified DOM elements are found.</p>
+
+<pre><code>
+jQuery.waitFor({
+  elements: ['#someElementId'],
+  success: function(){
+    alert('The element I was wating for is in the DOM!');
+  }
+});
+</code></pre>
+
+
+<h3>
+<a id="set-the-max-iterations-and-poll-delay" class="anchor" href="#set-the-max-iterations-and-poll-delay" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set the max iterations and poll delay</h3>
+
+<p>Max iterations determines how many time the DOM will be touched in order to see if the specified DOM element(s) exist. The pollDelay setting determines how many milliseconds to wait between each iteration. The default value max-iteration is 100 and the default poll-delay is 250ms. Once the max-iteration limit is reached, no more attempts will be made to check for the specified DOM elements. In the example below, there will be 10 attempts to find the specified DOM element, with a delay of 500ms between each attempt.</p>
+
+<pre><code>
+jQuery.waitFor({
+  maxIterations: 10,
+  pollDelay: 500,
+  elements: ['#someElementId'],
+  success: function(){
+    alert('The element I was wating for is in the DOM!');
+  },
+});
+</code></pre>
+
+<h3>
+<a id="provide-a-failure-callback" class="anchor" href="#provide-a-failure-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provide a failure callback</h3>
+
+<p>If jQuery.waitFor reaches its max-iterations and any of the specified DOM elements are not found, a "failure" method will be executed.</p>
+
+<pre><code>
+jQuery.waitFor({
+  maxIterations: 10,
+  pollDelay: 500,
+  elements: ['#someElementId'],
+  success: function(){
+    alert('The element I was wating for is in the DOM!');
+  },
+  failure: function(){
+    alert('Non of the elements I was wating for were found in the DOM!');
+  }
+});
+</code></pre>
+
         </section>
 
         <aside id="sidebar">
