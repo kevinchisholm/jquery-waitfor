@@ -73,7 +73,9 @@ header img.jquery-logo{display:block;float:left;width:243px;margin-right:20px;}
 
 .removeAll{
 	display:none;
+    padding: 20px;
 	background-color:#333;
+    font-size: 32px;
 }
 
 .demoBoxContainer .controls .show{
